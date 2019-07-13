@@ -1,0 +1,205 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1; font-family: 'Noto Sans KR',sans-serif; font-size: 13px; font-weight: 300; letter-spacing: -0.5px; color: #333; }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+a { text-decoration: none; }
+
+button { padding: 0; border: 0; margin: 0; }
+
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 300; src: url(../fonts/NotoSansKR-Light.woff2) format("woff2"), url(../fonts/NotoSansKR-Light.woff) format("woff"), url(../fonts/NotoSansKR-Light.otf) format("opentype"), url(../fonts/NotoSansKR-Light.ttf) format("truetype"); }
+
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 400; src: url(../fonts/NotoSansKR-Regular.woff2) format("woff2"), url(../fonts/NotoSansKR-Regular.woff) format("woff"), url(../fonts/NotoSansKR-Regular.otf) format("opentype"), url(../fonts/NotoSansKR-Regular.ttf) format("truetype"); }
+
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 500; src: url(../fonts/NotoSansKR-Medium.woff2) format("woff2"), url(../fonts/NotoSansKR-Medium.woff) format("woff"), url(../fonts/NotoSansKR-Medium.otf) format("opentype"), url(../fonts/NotoSansKR-Medium.ttf) format("truetype"); }
+
+@font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 600; src: url(../fonts/NotoSansKR-Bold.woff2) format("woff2"), url(../fonts/NotoSansKR-Bold.woff) format("woff"), url(../fonts/NotoSansKR-Bold.otf) format("opentype"), url(../fonts/NotoSansKR-Bold.ttf) format("truetype"); }
+
+.blind { position: absolute; width: 1px; height: 1px; overflow: hidden; border: 0; clip: rect(1px, 1px, 1px, 1px); }
+
+.common-header { position: absolute; top: 0; left: 0; width: 100%; height: 97px; z-index: 50; overflow: hidden; }
+
+.common-header.on { background: #fff; height: 457px; -webkit-transition: all .3s ease-out; -o-transition: all .3s ease-out; -moz-transition: all .3s ease-out; transition: all .3s ease-out; }
+
+.common-header.on .logo > a { background: url("../images/icon2/header-logo.png") 0px -33px no-repeat; }
+
+.common-header:before { display: block; content: ""; position: absolute; top: 97px; left: 0; width: 100%; height: 360px; background: #f1f1f3; }
+
+.common-header .inner { width: 1500px; margin: 0 auto; }
+
+.common-header .inner:after { display: block; content: ""; clear: both; }
+
+.common-header .logo { float: left; margin: 31px 0 0 5px; }
+
+.common-header .logo a { display: block; width: 134px; height: 0; max-height: 33px; padding-top: 33px; overflow: hidden; background: url("../images/icon2/header-logo.png") no-repeat; }
+
+.common-header .gnb { text-align: center; float: left; margin-left: 205px; }
+
+.common-header .depth1 { display: inline-block; }
+
+.common-header .depth1:after { display: block; content: ""; clear: both; }
+
+.common-header .depth1 > li { float: left; }
+
+.common-header .depth1 > li > a { display: block; font-size: 20px; font-weight: 400; color: #fff; height: 97px; line-height: 99px; padding: 0 64.3px; }
+
+.common-header .depth1 > li > a.on { color: #24629b; }
+
+.common-header .depth2 { text-align: left; padding-left: 64.3px; margin-top: 20px; }
+
+.common-header .depth2 > li > a { display: inline-block; font-size: 16px; color: #333; font-weight: 400; text-align: left; height: 35px; padding-left: 10px; position: relative; }
+
+.common-header .depth2 > li > a:before { display: block; content: ""; position: absolute; top: 7px; left: 0; background: #575757; width: 2px; height: 2px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+
+.common-header .depth3 { position: relative; }
+
+.common-header .depth3 > li { padding-left: 10px; }
+
+.common-header .depth3 > li > a { display: inline-block; height: 32px; font-size: 15px; color: #666; }
+
+.common-header .util { margin: 40px 6px 0 0; float: right; }
+
+.common-header .util:after { display: block; content: ""; clear: both; }
+
+.common-header .util ul { float: left; margin-top: 1px; }
+
+.common-header .util li { display: inline-block; padding-left: 12px; margin-left: 12px; position: relative; }
+
+.common-header .util li:before { display: block; content: ""; position: absolute; top: 2px; left: 0; width: 1px; height: 16px; background: #aaa; }
+
+.common-header .util li:first-child:before { display: none; }
+
+.common-header .util li > a { font-size: 17px; color: #d7d7d7; }
+
+.common-header .util li > a:hover { color: #6b9ecc; }
+
+.common-header .lang { float: left; display: block; width: 46px; height: 20px; line-height: 20px; border: 1px solid #aeaeae; font-size: 12px; text-align: center; color: #d7d7d7; margin-left: 29px; text-indent: 1px; }
+
+.common-header .lang:hover { color: #6b9ecc; border-color: #6b9ecc; }
+
+.common-footer { background: #3e3e3e; padding: 35px 0; height: 147px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-weight: 400; letter-spacing: 0; }
+
+.common-footer .inner { width: 1600px; margin: 0 auto; }
+
+.common-footer .inner:after { display: block; content: ""; clear: both; }
+
+.common-footer .logo { position: relative; float: left; margin-left: 5px; width: 116px; height: 0; max-height: 28px; padding-top: 28px; overflow: hidden; }
+
+.common-footer .logo:before { display: block; content: ""; position: absolute; top: 0; left: 0; background-image: url(../images/icons/icon.png); background-position: 0px 0px; width: 116px; height: 28px; }
+
+.common-footer .left { float: left; margin-left: 115px; }
+
+.common-footer .nav ul:after { display: block; content: ""; clear: both; }
+
+.common-footer .nav li { float: left; padding-left: 15px; margin-left: 18px; position: relative; }
+
+.common-footer .nav li:before { display: block; content: ""; position: absolute; top: 4px; left: 0; width: 1px; height: 14px; background: #8d8d8d; }
+
+.common-footer .nav li:first-child { margin-left: 0; padding-left: 0; }
+
+.common-footer .nav li:first-child:before { display: none; }
+
+.common-footer .nav a { line-height: 20px; font-size: 14px; color: #8d8d8d; }
+
+.common-footer .info { margin-top: 23px; }
+
+.common-footer .info .address { font-size: 13px; color: #828282; }
+
+.common-footer .info .copy { display: block; font-size: 12px; color: #828282; margin-top: 6px; }
+
+.common-footer .right { float: right; }
+
+.common-footer .right:after { display: block; content: ""; clear: both; }
+
+.common-footer .sns { width: 32px; float: left; margin: 4px 21px 0 0; }
+
+.common-footer .sns a { display: block; width: 32px; height: 0; max-height: 32px; padding-top: 32px; overflow: hidden; background: url("../images/icon2/common.png") 0 -100px no-repeat; }
+
+.common-footer .prugio { float: left; width: 127px; height: 35px; border: 1px solid #626262; position: relative; }
+
+.common-footer .prugio a { display: block; position: relative; width: 100%; height: 0; max-height: 35px; padding-top: 35px; overflow: hidden; }
+
+.common-footer .prugio a:before { display: block; content: ""; position: absolute; top: 12px; left: 15px; background-image: url(../images/icons/icon.png); background-position: 0px -38px; width: 67px; height: 12px; }
+
+.common-footer .prugio:after { display: block; content: ""; position: absolute; top: 12px; right: 14px; width: 6px; height: 11px; background: url("../images/icon2/common.png") no-repeat -470px -180px; }
+
+.section-main { position: relative; }
+
+.section-main .video { position: relative; height: 100vh; }
+
+.section-main .video video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -o-object-fit: fill; object-fit: fill; }
+
+.section-main .video-btn { position: absolute; bottom: 50px; left: 57px; width: 24px; height: 24px; z-index: 10; }
+
+.section-main .video-btn button { width: 24px; height: 0; max-height: 24px; padding-top: 24px; overflow: hidden; background: url("../images/icon2/main-video-control.png")-24px 0 no-repeat; cursor: pointer; }
+
+.section-main .video-btn button.on { background-position: 0 0; }
+
+.section-main .title-wrap { position: absolute; bottom: 0; left: 50px; padding-bottom: 50px; }
+
+.section-main .title-wrap p { font-size: 90px; font-weight: 700; color: #fff; letter-spacing: -2px; margin-bottom: 21px; }
+
+.section-main .title-wrap span { display: inline-block; font-size: 24px; font-weight: 400; color: #fff; margin: 0 0 50px 7px; }
+
+.section-main .news-room { position: absolute; bottom: 104px; right: 0; }
+
+.section-main .news-room:after { display: block; content: ""; clear: both; }
+
+.section-main .news-room h3 { float: left; font-size: 0; }
+
+.section-main .news-room h3 button { width: 65px; height: 210px; background: #fff; position: relative; cursor: pointer; }
+
+.section-main .news-room h3 button.on:after { content: "닫기"; }
+
+.section-main .news-room h3 button.on:before { background-position: -6px 0; }
+
+.section-main .news-room h3 button:after { content: "열기"; position: absolute; overflow: hidden; width: 1px; height: 1px; border: 0; clip: rect(1px, 1px, 1px, 1px); }
+
+.section-main .news-room h3 button:before { display: block; content: ""; position: absolute; bottom: 33px; left: 50%; width: 6px; height: 10px; background: url("../images/icon2/main-news-arrow.png") no-repeat; }
+
+.section-main .news-room h3 .name { position: absolute; top: 30px; left: 0; width: 100%; text-align: center; font-family: 'Noto Sans KR',sans-serif; font-size: 13px; letter-spacing: -0.7px; }
+
+.section-main .news-room .content { width: 0; overflow: hidden; float: left; -webkit-transition: all .3s ease-out; -o-transition: all .3s ease-out; -moz-transition: all .3s ease-out; transition: all .3s ease-out; }
+
+.section-main .news-room .content.on { width: 651px; }
+
+.section-main .news-room .content ul { width: 651px; }
+
+.section-main .news-room .content ul:after { display: block; content: ""; clear: both; }
+
+.section-main .news-room .content li { width: 216px; height: 210px; border-left: 1px solid #eee; float: left; }
+
+.section-main .news-room .content a { display: block; height: 100%; background: #fff; padding: 30px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; }
+
+.section-main .news-room .content .title { font-size: 18px; font-weight: 400; color: #000; line-height: 25px; }
+
+.section-main .news-room .content .data { position: absolute; bottom: 33px; font-size: 15px; color: #999; }
+
+.section-main .news-room .link-wrap { float: left; }
+
+.section-main .news-room .link-wrap a { display: block; width: 105px; height: 105px; font-size: 14px; color: #bdfbfd; font-weight: 400; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 73px 0 0 15px; }
+
+.section-main .news-room .link-wrap .link1 { background: url("../images/icon2/main-news-btn.png") no-repeat; }
+
+.section-main .news-room .link-wrap .link2 { background: url("../images/icon2/main-news-btn.png")-105px 0 no-repeat; }
+
+.section-main .banner { position: absolute; bottom: 319px; right: 0; font-size: 0; }
+
+.section-main .banner a { display: block; height: 100%; }
+
+/*# sourceMappingURL=../maps/style.css.map */
