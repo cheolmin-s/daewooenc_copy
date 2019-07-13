@@ -1,0 +1,346 @@
+.blind{
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    border:0;
+    clip:rect(1px,1px,1px,1px);
+}
+
+// common-header
+
+.common-header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:97px;
+    z-index:50;
+    overflow:hidden;
+
+    &.on{
+        background:#fff;
+        height:457px;
+        transition:all .3s ease-out;
+
+        .logo > a{
+            background:url('../images/icon2/header-logo.png')0px -33px no-repeat;
+        }
+    }
+
+    &:before{
+        display:block;
+        content:"";
+        position:absolute;
+        top:97px;
+        left:0;
+        width:100%;
+        height:360px;
+        background:#f1f1f3;
+        
+    }
+    
+    .inner{
+        width:1500px;
+        margin:0 auto;
+        @include clear;
+    }
+
+    .logo{
+        float:left;
+        margin:31px 0 0 5px;
+
+        & a{
+            display:block;
+            @include hidden(134px,33px);
+            background:url('../images/icon2/header-logo.png')no-repeat;
+        }
+    }
+
+    // GNB
+
+    .gnb{
+        text-align:center;
+        float:left;
+        margin-left:205px;
+    }
+
+    // depth1
+
+    .depth1{
+        display:inline-block;
+        @include clear;
+
+        & > li{
+            float:left;
+
+            & > a{
+                display:block;
+                @include font(20px,400,#fff);
+                height:97px;
+                line-height:99px;
+                padding:0 64.3px;
+
+                &.on{
+                    color:#24629b;
+                }
+            }
+        }
+    }
+
+    .depth2{
+        text-align:left;
+        padding-left:64.3px;
+        margin-top:20px;
+
+        & > li{
+
+            & > a{
+                display:inline-block;
+                font-size:16px;
+                color:#333;
+                font-weight:400;
+                text-align:left;
+                height:35px;
+                padding-left:10px;
+                position:relative;
+
+                &:before{
+                    display:block;
+                    content:"";
+                    position:absolute;
+                    top:7px;
+                    left:0;
+                    background:#575757;
+                    width:2px;
+                    height:2px;
+                    border-radius:50%;
+                }
+            }
+        }
+    }
+
+    .depth3{
+        position:relative;
+
+        & > li{
+            padding-left:10px;
+
+            & > a{
+                display:inline-block;
+                height:32px;
+                font-size:15px;               
+                color:#666;
+            }
+        }
+    }
+
+    // util
+
+    .util{
+        margin:40px 6px 0 0;
+        float:right;
+        @include clear;
+
+        & ul{
+            float:left;
+            margin-top:1px;
+        }
+
+        & li{
+            display:inline-block;
+            padding-left:12px;
+            margin-left:12px;
+            position:relative;
+
+            &:before{
+                display:block;
+                content:"";
+                position:absolute;
+                top:2px;
+                left:0;
+                width:1px;
+                height:16px;
+                background:#aaa;
+            }
+
+            &:first-child:before{
+                display:none;
+            }
+
+            & > a{
+                font-size:17px;
+                color:#d7d7d7;
+
+                &:hover{
+                    color:#6b9ecc;
+                }
+            }
+        }
+    }
+
+    .lang{
+        float:left;
+        display:block;
+        width:46px;
+        height:20px;
+        line-height:20px;
+        border:1px solid #aeaeae;
+        font-size:12px;
+        text-align:center;
+        color:#d7d7d7;
+        margin-left:29px;
+        text-indent:1px;
+
+        &:hover{
+            color:#6b9ecc;
+            border-color:#6b9ecc;
+        }
+    }
+}
+
+
+// common-footer
+
+.common-footer{
+    background:#3e3e3e;
+    padding:35px 0;
+    height:147px;
+    box-sizing: border-box;
+    font-weight:400;
+    letter-spacing:0;
+
+    .inner{
+        width:1600px;
+        margin:0 auto;
+        @include clear;
+    }
+
+    .logo{
+        position:relative;
+        float:left;
+        margin-left:5px;
+        @include hidden(116px,28px);
+
+        &:before{
+            display:block;
+            content:"";
+            position:absolute;
+            top:0;
+            left:0;
+            @include sprite($icon-footer-logo);
+        }
+    }
+
+    .left{
+        float:left;
+        margin-left:115px;
+    }
+
+    .nav{
+
+        & ul{
+            @include clear;
+        }
+
+        & li{
+            float:left;
+            padding-left:15px;
+            margin-left:18px;
+            position:relative;
+
+            &:before{
+                display:block;
+                content:"";
+                position:absolute;
+                top:4px;
+                left:0;
+                width:1px;
+                height:14px;;    
+                background:#8d8d8d;
+            }
+
+            &:first-child{
+                margin-left:0;
+                padding-left:0;
+
+                &:before{
+                    display:none;
+                }
+            }
+        }
+
+        & a{
+            line-height:20px;
+            font-size:14px;
+            color:#8d8d8d;
+        }
+    }
+
+    .info{
+        margin-top:23px;
+
+        .address{
+            font-size:13px;
+            color:#828282;
+        }
+
+        .copy{
+            display:block;
+            font-size:12px;
+            color:#828282;
+            margin-top:6px;
+        }
+    }
+
+    .right{
+        float:right;
+        @include clear;   
+    }
+
+    .sns{
+        width:32px;
+        float:left;
+        margin:4px 21px 0 0;
+
+        & a{
+            display:block;
+            @include hidden(32px,32px);
+            background:url('../images/icon2/common.png')0 -100px no-repeat;
+        }
+    }
+
+    .prugio{
+        float:left;
+        width:127px;
+        height:35px;
+        border:1px solid #626262;
+        position:relative;
+
+        & a{
+            display:block;
+            position:relative;
+            @include hidden(100%,35px);
+
+            &:before{
+                display:block;
+                content:"";
+                position:absolute;
+                top:12px;
+                left:15px;
+                @include sprite($icon-prugio-iink);
+            }
+        }
+
+        &:after{
+            display:block;
+            content:"";
+            position:absolute;
+            top:12px;
+            right:14px;
+            width:6px;
+            height:11px;
+            background:url('../images/icon2/common.png')no-repeat -470px -180px;
+        }
+    }
+}
