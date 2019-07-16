@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=1300"> -->
+    <meta name="viewport" content="width=1600">
     <meta name="format-detection" content="telephone=no">
     <title>대우건설</title>
     <link rel="stylesheet" href="../css/style.css">
@@ -10,10 +10,10 @@
     <script src="../js/common.js"></script>
 </head>
 <body>
-
+<!-- 헤더 -->
 <header class="common-header">
     <div class="inner">
-        <h1 class="logo"><a href="#">대우건설</a></h1>
+        <h1 class="logo"><a href="main.html">대우건설</a></h1>
         <nav class="gnb">
             <h2 class="blind">주메뉴</h2>
             <ul class="depth1">
@@ -24,7 +24,7 @@
                             <a href="#">기업정보</a>
                             <ul class="depth3">
                                 <li><a href="#">CEO 인사말</a></li>
-                                <li><a href="#">비전</a></li>
+                                <li><a href="vision.html">비전</a></li>
                                 <li><a href="#">주요연혁</a></li>
                                 <li><a href="#">조직도</a></li>
                                 <li><a href="#">글로벌 네트워크</a></li>
@@ -82,12 +82,13 @@
         </div>
     </div>
 </header>
-
+<!-- 메인 컨테이너-->
 <section class="section-container section-main">
+    <!-- 본문 영역 -->
     <div id="contents-main" class="contents-main">
         <h2 class="blind">메인 컨텐츠</h2>
         <div class="video">
-            <video id="main-video" autoplay loop>
+            <video id="main-video" playsinline autoplay loop muted>
                 <source src="../video/main-video.mp4" type="video/mp4">
             </video>
             <div class="video-btn"><button type="button">동영상 일시정지</button></div>
@@ -106,21 +107,21 @@
                 <ul>
                     <li>
                         <a href="#">
-                            <p class="title">대우건설, 모바일과 하나된 스마트 단지로 ‘New 푸르지오’를 완성하다</p>  
+                            <p class="heading">대우건설, 모바일과 하나된 스마트 단지로 ‘New 푸르지오’를 완성하다</p>  
                             <span class="data">2019.07.11</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="#">
-                            <p class="title">‘동탄역 푸르지오’ 자연사랑 플러스 서비스 제공</p>  
+                            <p class="heading">‘동탄역 푸르지오’ 자연사랑 플러스 서비스 제공</p>  
                             <span class="data">2019.07.08</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="#">
-                            <p class="title">대우건설 ‘고척제4주택 재개발정비사업’ 시공사 선정</p>  
+                            <p class="heading">대우건설 ‘고척제4주택 재개발정비사업’ 시공사 선정</p>  
                             <span class="data">2019.07.05</span>
                         </a>
                     </li>
@@ -136,7 +137,7 @@
         </div>
     </div>
 </section>
-
+<!-- 푸터 -->
 <footer class="common-footer">
     <h2 class="blind">푸터</h2>
     <div class="inner">
@@ -161,7 +162,6 @@
             <div class="prugio"><a href="#">푸르지오</a></div>
         </div>
     </div>
-</footer>
-    
+</footer>   
 </body>
 </html>
