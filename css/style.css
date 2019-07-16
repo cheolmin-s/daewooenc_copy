@@ -158,11 +158,11 @@ button { padding: 0; border: 0; margin: 0; }
 
 .head h2:after { display: block; content: ""; position: absolute; bottom: 0; left: 50%; width: 1px; height: 40px; margin-left: -1px; background: #fff; }
 
-.top-btn { position: fixed; right: 311px; bottom: 21px; cursor: pointer; display: none; }
+.top-btn { position: fixed; right: 311px; bottom: 21px; display: none; }
 
 .top-btn.on { display: block; }
 
-.top-btn button { display: block; width: 50px; height: 0; max-height: 50px; padding-top: 50px; overflow: hidden; position: relative; }
+.top-btn button { display: block; width: 50px; height: 0; max-height: 50px; padding-top: 50px; overflow: hidden; position: relative; cursor: pointer; }
 
 .top-btn button:before { display: block; content: ""; position: absolute; top: 0; left: 0; background-image: url(../images/icons/icon.png); background-position: 0px -182px; width: 50px; height: 50px; }
 
@@ -256,7 +256,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .section-main .news-room .content { width: 0; overflow: hidden; float: left; -webkit-transition: all .3s ease-out; -o-transition: all .3s ease-out; -moz-transition: all .3s ease-out; transition: all .3s ease-out; }
 
-.section-main .news-room .content.on { width: 651px; }
+.section-main .news-room .content.on { width: 650px; }
 
 .section-main .news-room .content ul { width: 651px; }
 

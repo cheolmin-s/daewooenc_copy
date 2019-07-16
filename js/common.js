@@ -143,6 +143,7 @@ $(function(){
         var $window = $(window);
 
         $window.on('scroll', scrollBtnEvent);
+        $topBtn.on('click', topBtnEvent);
 
         function scrollBtnEvent(){
 
@@ -163,10 +164,16 @@ $(function(){
                 $topBtn.removeClass('on');
             }
         }
+        scrollBtnEvent();
+        
+        function topBtnEvent(){
 
-        $topBtn.on('click',function(){
-            $(this).stop().animate('top');
-        });
+            var $body = $('html,body');
+            var offSet = $body.offset().top;
+            $body.stop().animate({scrollTop : offSet},500);
+        }
+        topBtnEvent()
+   
     }
     topBtn();
     
