@@ -415,7 +415,6 @@
     position:fixed;
     right:311px;
     bottom:21px;
-    cursor:pointer;
     display:none;
     
     &.on{
@@ -425,6 +424,7 @@
     & button{
         display:block;
         @include hidden(50px,50px);
+        cursor:pointer;
         position:relative;
 
         &:before{

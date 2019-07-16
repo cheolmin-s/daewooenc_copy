@@ -1,57 +1,55 @@
-$(function(){
+var init = (function(){
 
-    // header
+    var $window = $(window);
+    var $body = $('html,body'); 
 
-    function headerActive(){
-
+    // GNB
+    var gnbActive = function(){
+        
         var $header = $('.common-header');
         var $gnbDepth1 = $('.depth1 > li > a');
         var $lang = $('.lang');
         var $gnbDepth2 = $('.depth2 > li > a')
 
-        $gnbDepth1.on('mouseenter focus', mouseEnterEvent);
-        $header.on('mouseleave', mouseLeaveEvent);
-        $lang.on('focusout', focusOutEvent);
-        $gnbDepth2.on('focus', focusEvent);
-  
-        function mouseEnterEvent(){
+        
+        $gnbDepth1.on('mouseenter focus', function(){
 
             $gnbDepth1.addClass('on');
             $header.addClass('on');
 
-        }
-        mouseEnterEvent();
+        });
 
-        function mouseLeaveEvent(){
+        $header.on('mouseleave', function(){
+
             $gnbDepth1.removeClass('on');
             $header.removeClass('on');
 
-        }
-        mouseLeaveEvent();
+        });
 
-        function focusOutEvent(){
-
-            $gnbDepth1.removeClass('on')
-            $header.removeClass('on');
-        }
-        focusOutEvent();
-
-        function focusEvent(){
+        // 2뎁스 마지막 링크 포커스 헤더 열림
+        $gnbDepth2.last().on('focus', function(){
 
             $gnbDepth1.addClass('on');
             $header.addClass('on');
-        }
-        focusEvent();
-    }
-    headerActive();
+        });
 
-    // main video
+        // 헤더 영역 벗어나면 헤더 닫힘
+        $lang.on('blur', function(){
 
-    function mainVideo(){
+            $gnbDepth1.removeClass('on')
+            $header.removeClass('on');
 
+        });
+    };
+
+    // Main 비디오 
+    var mainVideo = function(){
+        
         var $videoBtn = $('.video-btn > button');
 
         $videoBtn.on('click',function(){
+
+            var $this = $(this);
 
             $(this).toggleClass('on');
 
@@ -67,14 +65,11 @@ $(function(){
 
             }
         });
+    };
 
-    }
-    mainVideo();
+    // Newsroom 버튼
+    var newsRoom = function(){
 
-    // newsroom
-
-    function newsRoom(){
-        
         var $newsRoomBtn = $('.news-room button');
 
         $newsRoomBtn.on('click',function(){
@@ -82,35 +77,33 @@ $(function(){
             $('.content, .news-room button').toggleClass('on');
             
         });
-    } 
-    newsRoom();
-    
-});
-$(function(){
 
-    // lnb 메뉴
-    
-    function lnbButton(){
+    };
 
-        var $lnbBtn = $('.lnb button');
+    // LNB 메뉴
+    var lnbBtn = function(){
 
+        var $lnbButton = $('.lnb button');
 
-        $lnbBtn.on('click',function(){
+        $lnbButton.on('click',function(e){
 
             var $this = $(this);
-            
-            $this.toggleClass('on').next().toggleClass('on');
+
+            e.preventDefault();
+
+            if( $this.hasClass('on')){
+
+                $this.removeClass('on').next().removeClass('on');
+            } else {
+
+                $lnbButton.removeClass('on').next().removeClass('on');
+                $this.addClass('on').next().addClass('on');
+            }
         });
+    };
 
-    }
-    lnbButton();
-
-    // scroll-active
-
-    function scrollActive(){
-        
-        var $window = $(window);
-
+    // 스크롤 효과
+    var scrollActive = function(){
         $window.on('scroll', scrollEvent);
 
         function scrollEvent(){
@@ -132,15 +125,13 @@ $(function(){
 
         }
         scrollEvent();
-    }
-    scrollActive();
+    };
 
-    // top-btn
-
-    function topBtn(){
+    // TOP 이동
+    var topBtn = function(){
 
         var $topBtn = $('.top-btn');
-        var $window = $(window);
+        var offSet = $body.offset().top;
 
         $window.on('scroll', scrollBtnEvent);
 
@@ -150,7 +141,6 @@ $(function(){
 
             if(scrollTop > 0){
                 $topBtn.addClass('on');
-
 
                 // 여기 수정 해야된다.
                 if ( scrollTop > 2865){
@@ -163,12 +153,27 @@ $(function(){
                 $topBtn.removeClass('on');
             }
         }
+        scrollBtnEvent();
 
-        $topBtn.on('click',function(){
-            $(this).stop().animate('top');
+        $topBtn.on('click', function(e){
+
+            e.preventDefault();
+
+            $body.stop().animate({scrollTop : offSet},500);
         });
-    }
+    };
+
+
+    // init
+    gnbActive();
+    mainVideo();
+    newsRoom();
+    lnbBtn();
+    scrollActive();
     topBtn();
-    
+
 });
+
+// 실행
+$(init);
 //# sourceMappingURL=../maps/common.js.map
