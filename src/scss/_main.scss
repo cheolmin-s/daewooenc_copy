@@ -1,5 +1,6 @@
 .section-main{
     position:relative;
+    min-width:1600px;
 
     .video{
         position:relative;
@@ -149,7 +150,7 @@
                 position:relative;
             }
 
-            .title{
+            .heading{
                 font-size:18px;
                 font-weight:400;
                 color:#000;

@@ -6,34 +6,42 @@ $(function(){
 
         var $header = $('.common-header');
         var $gnbDepth1 = $('.depth1 > li > a');
+        var $lang = $('.lang');
+        var $gnbDepth2 = $('.depth2 > li > a')
 
-        $gnbDepth1.on('mouseenter', mouseEnterEvent);
+        $gnbDepth1.on('mouseenter focus', mouseEnterEvent);
         $header.on('mouseleave', mouseLeaveEvent);
-
-
-        // 선언    
-        function mouseEnter(){
+        $lang.on('focusout', focusOutEvent);
+        $gnbDepth2.on('focus', focusEvent);
+  
+        function mouseEnterEvent(){
 
             $gnbDepth1.addClass('on');
             $header.addClass('on');
 
         }
+        mouseEnterEvent();
 
-        function mouseLeave(){
-
+        function mouseLeaveEvent(){
             $gnbDepth1.removeClass('on');
             $header.removeClass('on');
 
         }
+        mouseLeaveEvent();
 
-        // init
-        function mouseLeaveEvent(){
-            mouseLeave();
-        };
+        function focusOutEvent(){
 
-        function mouseEnterEvent(){        
-            mouseEnter();
+            $gnbDepth1.removeClass('on')
+            $header.removeClass('on');
         }
+        focusOutEvent();
+
+        function focusEvent(){
+
+            $gnbDepth1.addClass('on');
+            $header.addClass('on');
+        }
+        focusEvent();
     }
     headerActive();
 

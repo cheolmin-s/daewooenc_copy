@@ -7,7 +7,7 @@
     clip:rect(1px,1px,1px,1px);
 }
 
-// common-header
+// 헤더
 
 .common-header{
     position:absolute;
@@ -17,6 +17,7 @@
     height:97px;
     z-index:50;
     overflow:hidden;
+    min-width:1600px;
 
     &.on{
         background:#fff;
@@ -116,6 +117,10 @@
                     height:2px;
                     border-radius:50%;
                 }
+
+                &:hover,&:focus{
+                    color:#6b9ecc;
+                }
             }
         }
     }
@@ -131,6 +136,10 @@
                 height:32px;
                 font-size:15px;               
                 color:#666;
+
+                &:hover,&:focus{
+                    color:#6b9ecc;
+                }
             }
         }
     }
@@ -172,7 +181,7 @@
                 font-size:17px;
                 color:#d7d7d7;
 
-                &:hover{
+                &:hover,&:focus{
                     color:#6b9ecc;
                 }
             }
@@ -192,7 +201,7 @@
         margin-left:29px;
         text-indent:1px;
 
-        &:hover{
+        &:hover,&:focus{
             color:#6b9ecc;
             border-color:#6b9ecc;
         }
@@ -200,7 +209,7 @@
 }
 
 
-// common-footer
+// 푸터
 
 .common-footer{
     background:#3e3e3e;
@@ -209,6 +218,7 @@
     box-sizing: border-box;
     font-weight:400;
     letter-spacing:0;
+    min-width:1600px;
 
     .inner{
         width:1600px;
@@ -342,5 +352,290 @@
             height:11px;
             background:url('../images/icon2/common.png')no-repeat -470px -180px;
         }
+    }
+}
+
+// 본문
+
+.inner{
+    width:1140px;
+    margin:0 auto;
+}
+
+.contents-main{
+    position:relative;
+    min-width:1600px;
+
+    .title{
+        margin-top:99px;
+    }
+
+    & h3{
+        @include font(35px,400,#000);
+        text-align:center;
+    }
+
+    & h4{
+        @include font(30px,400,#000);
+        text-align:center;
+        margin-bottom:60px;
+    }
+}
+
+// 서브 헤딩 영역
+.head{
+    height:300px;
+    padding-top:158px;
+    box-sizing:border-box;
+    min-width:1600px;
+
+    & h2{
+        @include font(40px,500,#fff);
+        text-align:center;
+        padding-bottom:60px;
+        position:relative;
+        
+        &:after{
+            display:block;
+            content:"";
+            position:absolute;
+            bottom:0;
+            left:50%;
+            width:1px;
+            height:40px;
+            margin-left:-1px;
+            background:#fff;
+            
+        }
+    } 
+}
+
+// top-btn
+.top-btn{
+    position:fixed;
+    right:311px;
+    bottom:21px;
+    cursor:pointer;
+    display:none;
+    
+    &.on{
+        display:block;
+    }
+
+    & button{
+        display:block;
+        @include hidden(50px,50px);
+        position:relative;
+
+        &:before{
+            display:block;
+            content:"";
+            position:absolute;
+            top:0;
+            left:0;
+            @include sprite($icon-top-btn);
+        }
+    }
+}
+
+
+//서브 헤딩 bg
+.about{
+    .head{
+        background:url('../images/about/about-vision-heading.jpg')no-repeat center;
+    }
+}
+
+// breadcrumb
+.location-wrap{
+    position:absolute;
+    top:-22px;
+    right:0;
+    width:100%;
+}
+
+.location{
+    width:1500px;
+    margin:0 auto;
+    text-align:right;
+    padding-right:5px;
+    box-sizing:border-box;
+
+    & span{
+        font-size:12px;
+        color:#ddd;
+        font-weight:400;
+
+        &:before{
+            display:inline-block;
+            content:">";
+            padding:0 9px 0 6.7px;
+            font-size:11px;
+        }
+
+        &:first-child{
+
+            &:before{
+                display:none;
+            }
+        }
+    }
+}
+
+// lnb
+.lnb{
+    position:sticky;
+    top:0;
+    left:0;
+    background:#fff;
+    height:70px;
+    border-bottom:1px solid #dadada;
+    z-index:30;
+    min-width:1600px;
+
+    & > ul{
+        width:1140px;
+        margin:0 auto;
+        display:table;
+        table-layout:fixed;
+
+        & > li{
+            display:table-cell;
+            position:relative;
+
+            &:before{
+                display:block;
+                content:"";
+                position:absolute;
+                top:50%;
+                left:-1px;
+                width:1px;
+                height:20px;
+                margin-top:-10px;
+                background:#dcdcdc;
+            }
+
+            &:first-child:before{
+                left:0;
+            }
+
+            &:last-child:after{
+                display:block;
+                content:"";
+                position:absolute;
+                top:50%;
+                right:0;
+                width:1px;
+                height:20px;
+                margin-top:-10px;
+                background:#dcdcdc;
+            }
+
+            & button{
+                display:block;
+                width:100%;
+                @include font(17px,400,#000);
+                font-family:'Noto Sans KR',sans-serif;
+                background:0;
+                line-height:70px;
+                position:relative;
+                cursor:pointer;
+
+                &.on{
+                    content:"닫기";       
+                }
+
+                & span{
+                    padding-right:21px;
+                    letter-spacing:-0.5px;
+                    position:relative;
+
+                    &:before{
+                        display:block;
+                        content:"";
+                        position:absolute;
+                        top:12px;
+                        right:0;
+                        width:11px;
+                        height:6px;
+                        background:url('../images/icon2/common.png') -468px -154px no-repeat;
+                    }
+                }
+
+                &:after{
+                    content:"열기";            
+                    position:absolute;
+                    width:1px;
+                    height:1px;
+                    overflow:hidden;
+                    border:0;
+                    clip:rect(1px,1px,1px,1px);
+                }
+            }
+
+            & > a{
+                display:block;
+                @include font(17px,400,#000);
+                line-height:70px;
+                text-align:center;
+            }
+        }
+    }
+
+    .sub-list{
+        position:absolute;
+        top:71px;
+        left:0;
+        width:100%;
+        background:#fff;
+        border:1px solid #dcdcdc;
+        border-top:0;
+        z-index:5;
+        display:none;
+
+        &.on{
+            display:block;
+        }
+        
+        & li{
+            border-bottom:1px solid #dcdcdc;
+
+            &:last-child{
+                border-bottom:0;
+            }
+
+        }
+
+        & a{
+            display:block;
+            font-size:16px;
+            color:#666;
+            line-height:48px;
+            padding:0 20px;
+            position:relative;
+
+            &:after{
+                display:block;
+                content:"";
+                position:absolute;
+                top:20px;
+                right:20px;
+                width:6px;
+                height:11px;
+                background:url('../images/icon2/common.png') -471px -180px no-repeat;
+            }
+        }
+    }
+}
+
+// scroll-active
+.scroll-active{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all .5s ease-out;
+
+    &.on{
+        opacity:1;
+        transform:translateY(0);
     }
 }
