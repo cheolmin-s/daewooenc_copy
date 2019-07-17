@@ -1,7 +1,7 @@
 var init = (function(){
 
     var $window = $(window);
-    var $body = $('html,body'); 
+    var $body = $('html,body');
 
     // GNB
     var gnbActive = function(){
@@ -163,6 +163,42 @@ var init = (function(){
         });
     };
 
+    // history list 메뉴
+    var historyNav = function(){
+
+        var $historyNavLink = $('.history-list-nav a');
+        var $sec = $('.sec'); 
+        var $historyNav = $('.history-list-nav');
+
+        $historyNavLink.on('click',function(e){
+
+            e.preventDefault();
+    
+            var $this = $(this);
+            var index = $this.parent().index();
+            var position = $sec.eq(index).offset().top - 235;
+
+            $body.stop().animate({scrollTop:position},500);
+
+            $historyNavLink.removeClass('on');
+            $this.addClass('on');
+    
+        });
+
+        // border-bottom
+        $window.on('scroll',function(){
+
+            var scrollTop = $window.scrollTop();
+            var offSet = $historyNav.offset().top - 71;
+
+            if( scrollTop >= offSet ){
+                $historyNav.addClass('on');
+            } else {
+                $historyNav.removeClass('on');
+            }
+        });
+    };
+ 
 
     // init
     gnbActive();
@@ -171,6 +207,7 @@ var init = (function(){
     lnbBtn();
     scrollActive();
     topBtn();
+    historyNav();
 
 });
 
