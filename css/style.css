@@ -146,7 +146,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .contents-main { position: relative; min-width: 1600px; }
 
-.contents-main .title { margin-top: 99px; }
+.contents-main .section { padding-top: 99px; }
 
 .contents-main h3 { font-size: 35px; font-weight: 400; color: #000; text-align: center; }
 
@@ -453,5 +453,81 @@ button { padding: 0; border: 0; margin: 0; }
 .section-vision .policy table li { font-size: 16px; line-height: 24px; padding-left: 13px; position: relative; }
 
 .section-vision .policy table li:before { display: block; content: ""; position: absolute; top: 50%; left: 0; margin-top: -1px; width: 4px; height: 4px; background: #6bb2e2; }
+
+.section-history .contents-main h3 { margin-bottom: 21px; }
+
+.section-history .section { padding-bottom: 172px; }
+
+.section-history .history-list-nav { padding-top: 56px; padding-bottom: 54px; text-align: center; margin-bottom: 50px; position: -webkit-sticky; position: sticky; top: 71px; background: #fff; z-index: 5; }
+
+.section-history .history-list-nav.on { border-bottom: 1px solid #dadada; }
+
+.section-history .history-list-nav ul { width: 610px; margin: 0 auto; position: relative; }
+
+.section-history .history-list-nav ul:after { display: block; content: ""; clear: both; }
+
+.section-history .history-list-nav ul:before { display: block; content: ""; position: absolute; top: 0; left: 50%; width: 506px; height: 1px; background: #dadada; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -ms-transform: translateX(-50%); -o-transform: translateX(-50%); transform: translateX(-50%); }
+
+.section-history .history-list-nav li { float: left; padding-left: 83px; }
+
+.section-history .history-list-nav li:first-child { padding-left: 0; }
+
+.section-history .history-list-nav a { display: inline-block; font-size: 16px; color: #666; width: 90px; padding-top: 34px; position: relative; }
+
+.section-history .history-list-nav a.on { font-size: 18px; font-weight: 400; padding-top: 35px; color: #6b9ecc; }
+
+.section-history .history-list-nav a.on:after { top: -7px; left: 37px; width: 15px; height: 15px; border: 3px solid #6b9ecc; background: #fff; }
+
+.section-history .history-list-nav a:after { display: block; content: ""; position: absolute; top: -4px; left: 40px; width: 10px; height: 10px; background: #dadada; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.section-history .sec .top { display: table; width: 100%; height: 298px; }
+
+.section-history .sec .top h4 { display: table-cell; vertical-align: middle; font-size: 50px; font-weight: 400; color: #fff; margin-bottom: 0; }
+
+.section-history .sec .bottom { width: 1140px; margin: 0 auto; padding: 50px 0 40px 0; }
+
+.section-history .sec dl:after { display: block; content: ""; clear: both; }
+
+.section-history .sec dl:last-child dd:before { display: none; }
+
+.section-history .sec dt { font-size: 50px; font-weight: 400; color: #6b9ecc; padding-left: 113px; padding-right: 113px; float: left; position: relative; }
+
+.section-history .sec dt:before { display: block; content: ""; position: absolute; top: 28px; right: 27px; width: 66px; height: 1px; background: #6b9ecc; }
+
+.section-history .sec dt:after { display: block; content: ""; position: absolute; top: 23px; right: -6px; width: 11px; height: 11px; border: 3px solid #6b9ecc; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background: #fff; }
+
+.section-history .sec dd { float: left; position: relative; padding-left: 90px; padding-bottom: 55px; margin-top: 10px; }
+
+.section-history .sec dd:before { display: block; content: ""; position: absolute; top: 22px; left: 0; width: 1px; height: 100%; background: #dadada; }
+
+.section-history .sec li { font-size: 16px; color: #333; line-height: 34px; padding-left: 8px; position: relative; }
+
+.section-history .sec li:before { display: block; content: ""; position: absolute; top: 50%; left: 0; width: 2px; height: 2px; background: #333; }
+
+.section-history .sec1 .top { background: url("../images/about/history-section1.jpg") no-repeat center 0; }
+
+.section-history .sec1 .top h4 { color: #000; }
+
+.section-history .sec1 .type1 { padding-left: 35px; }
+
+.section-history .sec1 span { font-size: 20px; font-weight: 400; color: #000; float: left; padding: 10px 27px 0 0; }
+
+.section-history .sec1 .list { padding-left: 0; line-height: 1; margin-bottom: 20px; }
+
+.section-history .sec1 .list:after { display: block; content: ""; clear: both; }
+
+.section-history .sec1 .list:last-child { margin-bottom: 0; }
+
+.section-history .sec1 .list:before { display: none; }
+
+.section-history .sec1 .list ul { float: left; }
+
+.section-history .sec2 .top { background: url("../images/about/history-section2.jpg") no-repeat center 0; }
+
+.section-history .sec3 .top { background: url("../images/about/history-section3.jpg") no-repeat center 0; }
+
+.section-history .sec4 .top { background: url("../images/about/history-section4.jpg") no-repeat center 0; }
+
+.section-history .sec4 dl:last-child dd { padding-bottom: 0; }
 
 /*# sourceMappingURL=../maps/style.css.map */
