@@ -173,30 +173,64 @@ var init = (function(){
         $historyNavLink.on('click',function(e){
 
             e.preventDefault();
+            e.stopPropagation();
     
             var $this = $(this);
             var index = $this.parent().index();
-            var position = $sec.eq(index).offset().top - 235;
+            var position = $sec.eq(index).offset().top - 234;
 
-            $body.stop().animate({scrollTop:position},500);
+            $body.stop().animate({scrollTop:position},600);
 
-            $historyNavLink.removeClass('on');
-            $this.addClass('on');
+            // $historyNavLink.removeClass('on');   
+            // $this.addClass('on');
     
         });
 
         // border-bottom
-        $window.on('scroll',function(){
+        $window.on('scroll', scrollEvent);
+
+     
+        function borderBottom(){
 
             var scrollTop = $window.scrollTop();
             var offSet = $historyNav.offset().top - 71;
 
             if( scrollTop >= offSet ){
                 $historyNav.addClass('on');
+                
             } else {
                 $historyNav.removeClass('on');
             }
-        });
+        }
+
+        function scrollColor(){
+
+            var scrollTop = $window.scrollTop();
+
+            $sec.each(function(){
+
+                var $this = $(this);
+                var index = $this.index() - 2;
+                var position = $this.offset().top - 235;
+
+                if( scrollTop >= position){
+
+                    $historyNavLink.removeClass('on');
+                    $historyNavLink.eq(index).addClass('on');
+    
+                } else {
+                    // $historyNavLink.eq(index).removeClass('on');
+                }
+
+            })
+
+        }
+
+        function scrollEvent(){
+            borderBottom();
+            scrollColor();
+        };
+        
     };
  
 
