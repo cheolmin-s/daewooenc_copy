@@ -1,0 +1,150 @@
+.section-faq{
+
+    .section{
+        padding-bottom:200px;
+    }
+    
+    .faq-list{
+        width:1140px;
+        margin:0 auto;
+        border-top:2px solid #335173;
+
+            
+        & button{
+            font-size:18px;
+            color:#333;
+            font-weight:400;
+            font-family:"Noto Sans KR",sans-serif;
+            background:0;
+            width:100%;
+            height:71px;
+            line-height:70px;
+            border-bottom:1px solid #eaeaea;
+            text-align:left;
+            padding:0 20px;
+            letter-spacing:-0.5px;
+            position:relative;
+            cursor:pointer;
+
+            &.on{
+                &:after{
+                    content:"닫기";
+                    background-position:-18px 0;
+                }
+            }
+
+            &:before{
+                display:inline-block;
+                content:"Q";
+                color:#fff;
+                text-align:center;
+                line-height:20px;
+                vertical-align:top;
+                width:25px;
+                height:23px;
+                margin:23px 15px 0 0;
+                background:#335173;
+            }
+
+            &:after{
+                display:block;
+                content:"열기";
+                position:absolute;
+                top:30px;
+                right:20px;
+                width:18px;
+                height:0;
+                max-height:11px;
+                padding-top:11px;
+                overflow:hidden;
+                background:url('../images/icon2/customer-faq-arrow.png')no-repeat;
+            }
+        }
+
+        & dd{
+            padding:30px 40px 30px 70px;
+            background:#f3f3f3;
+            border-bottom:1px solid #eaeaea;
+            display:none;
+        }
+    }
+    .text-wrap{
+        padding-left:45px;
+        position:relative;
+
+        &:before{
+            display:block;
+            position:absolute;
+            content:"A";
+            top:0;
+            left:0;
+            color:#fff;
+            text-align:center;
+            line-height:23px;
+            width:25px;
+            height:23px;
+            background:#6bb2e2;
+            font-size:18px;
+            font-weight:400;
+        }
+        
+        & p{
+            font-size:16px;
+            line-height:24px;
+        }
+
+        .br{
+            line-height:44px;
+        }
+
+        &.box div{
+            margin:20px 0 19px 0;
+        }
+
+        & div{
+            font-size:16px;
+            font-weight:600;
+            margin:20px 0 24px 0;
+
+            & span{
+                display:inline-block;
+                vertical-align:top;
+                margin-top:4px;
+            }
+
+            .type1{
+                display:inline-block;
+                @include hidden(140px,40px);
+                position:relative;
+                margin-left:7px;
+                
+                &:after{
+                    display:block;
+                    content:"";
+                    position:absolute;
+                    top:0;
+                    left:0;                    
+                    @include sprite($icon-customer-faq-link1);
+                }
+                
+            }
+
+            .type2{
+                display:inline-block;
+                @include hidden(56px,15px);
+                position:relative;
+                margin:0 9px 0 1px;
+                
+                &:after{
+                    display:block;
+                    content:"";
+                    position:absolute;
+                    top:0;
+                    left:0;                    
+                    @include sprite($icon-customer-faq-link2);
+                }
+                
+            }
+        }
+    }
+}

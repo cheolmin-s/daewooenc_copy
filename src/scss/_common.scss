@@ -370,6 +370,13 @@
         padding-top:99px;
     }
 
+    .txt{
+        font-size:16px;
+        color:#333;
+        text-align:center;
+        margin:24px 0 64px 0;
+    }
+
     & h3{
         @include font(35px,400,#000);
         text-align:center;
@@ -442,7 +449,21 @@
 //서브 헤딩 bg
 .about{
     .head{
-        background:url('../images/about/about-vision-heading.jpg')no-repeat center;
+        background:url('../images/about/about-heading.jpg')no-repeat center;
+    }
+}
+
+.customer{
+    .head{
+        background:url('../images/customer/customer-heading.jpg')no-repeat center;
+    }
+    .lnb li{
+        &:before{
+            left:-2px;
+        }
+        &:last-child:after{
+            right:1px;
+        }
     }
 }
 

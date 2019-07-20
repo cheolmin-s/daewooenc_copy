@@ -168,8 +168,8 @@ var init = (function(){
 
         var $historyNavLink = $('.history-list-nav a');
         var $sec = $('.sec'); 
-        var $historyNav = $('.history-list-nav');
-
+        var $historyNavList = $('.history-list-nav');
+        
         $historyNavLink.on('click',function(e){
 
             e.preventDefault();
@@ -186,21 +186,26 @@ var init = (function(){
     
         });
 
-        // border-bottom
+
         $window.on('scroll', scrollEvent);
 
-     
         function borderBottom(){
 
             var scrollTop = $window.scrollTop();
-            var offSet = $historyNav.offset().top - 71;
 
-            if( scrollTop >= offSet ){
-                $historyNav.addClass('on');
-                
-            } else {
-                $historyNav.removeClass('on');
-            }
+            $historyNavList.each(function(){
+
+                var $this = $(this);
+                var offSet = $this.offset().top - 71;
+
+                if( scrollTop >= offSet ){
+                    $this.addClass('on');
+                    
+                } else {
+                    $this.removeClass('on');
+                }
+            })
+
         }
 
         function scrollColor(){
@@ -217,9 +222,7 @@ var init = (function(){
 
                     $historyNavLink.removeClass('on');
                     $historyNavLink.eq(index).addClass('on');
-    
-                } else {
-                    // $historyNavLink.eq(index).removeClass('on');
+
                 }
 
             })
@@ -232,6 +235,30 @@ var init = (function(){
         };
         
     };
+
+    // FAQ 아코디언
+    var arcordionList = function(){
+
+        var $contents = $('.faq-list dd'); 
+        var $btn = $('.faq-list button');
+
+        $btn.on('click',function(){
+
+            var $this = $(this);
+            var index = $this.parents('dl').index();
+
+            if($this.hasClass('on')){
+                $contents.eq(index).stop().slideUp();
+                $this.removeClass('on');
+
+            } else{
+                $btn.removeClass('on');
+                $contents.stop().slideUp();
+                $this.addClass('on');
+                $contents.eq(index).stop().slideDown();
+            }
+        });
+    };
  
 
     // init
@@ -242,7 +269,7 @@ var init = (function(){
     scrollActive();
     topBtn();
     historyNav();
-
+    arcordionList();
 });
 
 // 실행
