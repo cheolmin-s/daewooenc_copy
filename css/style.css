@@ -30,17 +30,25 @@ button { padding: 0; border: 0; margin: 0; }
 
 @font-face { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 600; src: url(../fonts/NotoSansKR-Bold.woff2) format("woff2"), url(../fonts/NotoSansKR-Bold.woff) format("woff"), url(../fonts/NotoSansKR-Bold.otf) format("opentype"), url(../fonts/NotoSansKR-Bold.ttf) format("truetype"); }
 
+.skip-nav { text-align: center; }
+
+.skip-nav a { color: #fff; font-weight: 500; position: absolute; top: -50px; left: 0; width: 100%; padding: 10px 0; background: #24629b; z-index: 100; }
+
+.skip-nav a:focus { top: 0; }
+
 .blind { position: absolute; width: 1px; height: 1px; overflow: hidden; border: 0; clip: rect(1px, 1px, 1px, 1px); }
 
-.common-header { position: absolute; top: 0; left: 0; width: 100%; height: 97px; z-index: 50; overflow: hidden; min-width: 1600px; }
+.common-header { position: absolute; top: 0; left: 0; width: 100%; height: 97px; z-index: 50; overflow: hidden; }
 
 .common-header.on { background: #fff; height: 457px; -webkit-transition: all .3s ease-out; -o-transition: all .3s ease-out; -moz-transition: all .3s ease-out; transition: all .3s ease-out; }
 
 .common-header.on .logo > a { background: url("../images/icon2/header-logo.png") 0px -33px no-repeat; }
 
+.common-header.on .depth1 > li > a { color: #24629b; }
+
 .common-header:before { display: block; content: ""; position: absolute; top: 97px; left: 0; width: 100%; height: 360px; background: #f1f1f3; }
 
-.common-header .inner { width: 1500px; margin: 0 auto; }
+.common-header .inner { width: 1500px; margin: 0 auto; max-width: 1500px; }
 
 .common-header .inner:after { display: block; content: ""; clear: both; }
 
@@ -57,8 +65,6 @@ button { padding: 0; border: 0; margin: 0; }
 .common-header .depth1 > li { float: left; }
 
 .common-header .depth1 > li > a { display: block; font-size: 20px; font-weight: 400; color: #fff; height: 97px; line-height: 99px; padding: 0 64.3px; }
-
-.common-header .depth1 > li > a.on { color: #24629b; }
 
 .common-header .depth2 { text-align: left; padding-left: 64.3px; margin-top: 20px; }
 
@@ -144,7 +150,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .inner { width: 1140px; margin: 0 auto; }
 
-.contents-main { position: relative; min-width: 1600px; }
+.contents-main { position: relative; min-width: 1140px; }
 
 .contents-main .section { padding-top: 99px; }
 
@@ -154,7 +160,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .contents-main h4 { font-size: 30px; font-weight: 400; color: #000; text-align: center; margin-bottom: 60px; }
 
-.head { height: 300px; padding-top: 158px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; min-width: 1600px; }
+.head { height: 300px; padding-top: 158px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .head h2 { font-size: 40px; font-weight: 500; color: #fff; text-align: center; padding-bottom: 60px; position: relative; }
 
@@ -186,7 +192,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .location span:first-child:before { display: none; }
 
-.lnb { position: -webkit-sticky; position: sticky; top: 0; left: 0; background: #fff; height: 70px; border-bottom: 1px solid #dadada; z-index: 30; min-width: 1600px; }
+.lnb { position: -webkit-sticky; position: sticky; top: 0; left: 0; background: #fff; height: 70px; border-bottom: 1px solid #dadada; z-index: 30; min-width: 1140px; }
 
 .lnb > ul { width: 1140px; margin: 0 auto; display: table; table-layout: fixed; }
 
