@@ -42,6 +42,17 @@ $icon-footer-logo-total-width: 438px;
 $icon-footer-logo-total-height: 244px;
 $icon-footer-logo-image: '../images/icons/icon.png';
 $icon-footer-logo: (150px, 144px, -150px, -144px, 116px, 28px, 438px, 244px, '../images/icons/icon.png', 'icon-footer-logo', );
+$icon-header-popup-close-name: 'icon-header-popup-close';
+$icon-header-popup-close-x: 126px;
+$icon-header-popup-close-y: 194px;
+$icon-header-popup-close-offset-x: -126px;
+$icon-header-popup-close-offset-y: -194px;
+$icon-header-popup-close-width: 15px;
+$icon-header-popup-close-height: 15px;
+$icon-header-popup-close-total-width: 438px;
+$icon-header-popup-close-total-height: 244px;
+$icon-header-popup-close-image: '../images/icons/icon.png';
+$icon-header-popup-close: (126px, 194px, -126px, -194px, 15px, 15px, 438px, 244px, '../images/icons/icon.png', 'icon-header-popup-close', );
 $icon-prugio-iink-name: 'icon-prugio-iink';
 $icon-prugio-iink-x: 276px;
 $icon-prugio-iink-y: 144px;
@@ -78,7 +89,7 @@ $icon-vision-diagram-bg: (0px, 0px, 0px, 0px, 438px, 134px, 438px, 244px, '../im
 $icon-width: 438px;
 $icon-height: 244px;
 $icon-image: '../images/icons/icon.png';
-$icon-sprites: ($icon-customer-faq-link1, $icon-customer-faq-link2, $icon-footer-logo, $icon-prugio-iink, $icon-top-btn, $icon-vision-diagram-bg, );
+$icon-sprites: ($icon-customer-faq-link1, $icon-customer-faq-link2, $icon-footer-logo, $icon-header-popup-close, $icon-prugio-iink, $icon-top-btn, $icon-vision-diagram-bg, );
 $icon: (438px, 244px, '../images/icons/icon.png', $icon-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
