@@ -1,10 +1,9 @@
-const init = function(){
+const html = document.querySelector('html,body');
+const CLASS_ON = "on";
 
-    const html = document.querySelector('html,body');
-    const CLASS_ON = "on";
+const daewoo = {
 
-    const gnb = function(){
-        
+    gnb : function(){
         const header = document.querySelector('.common-header');
         const depth1 = document.querySelectorAll('.depth1 > li > a');
         const depth2 = document.querySelectorAll('.depth2 > li > a');
@@ -28,11 +27,9 @@ const init = function(){
         lang.addEventListener('blur', handleMouseLeave);
 
         depth2[depth2.length - 1].addEventListener('focus', handleMouseEnter);
+    },
 
-    }
-
-    const mainVideo = function(){
-
+    mainVideo : function(){
         const video = document.querySelector('#main-video');
         const btn = document.querySelector('.video-btn button');
 
@@ -50,10 +47,9 @@ const init = function(){
         }
 
         btn.addEventListener('click', videoToggle);
-    }
+    },
 
-    const newsRoom = function(){
-        
+    newsRoom : function(){
         const btn = document.querySelector('.news-room button');
         const content = document.querySelector('.news-room .content');
 
@@ -63,14 +59,123 @@ const init = function(){
         }
 
         btn.addEventListener('click', handleClick);
-    }
+    },
 
+    lnb : function(){
+        const lnbBtn = document.querySelectorAll('.lnb button');
+        const list = document.querySelectorAll('.lnb li');
+        
+        function Sub(){
+
+            this.open = function(){
+                this.parentNode.classList.add(CLASS_ON);
+            },
+
+            this.close = () => list.forEach(li => li.classList.remove(CLASS_ON));         
+        };
+
+        function lnbSubBox(){
+
+            const sub = new Sub();
+          
+            if( this.parentNode.classList.contains(CLASS_ON) ){
+                sub.close();
+
+            } else {
+                sub.close();
+                sub.open.call(this);
+            }
+
+        }
+
+        lnbBtn.forEach(btn => btn.addEventListener('click', lnbSubBox));
+    },
+
+    scroll : function(){
     
-    //실행
-    gnb();
-    mainVideo();
-    newsRoom(); 
+        function handleScroll(){
+            const active = document.querySelectorAll('.scroll-active');
+            const scrollTop = window.pageYOffset + window.innerHeight - 200;
+            
+            active.forEach( ac => {
+                const offSet = ac.offsetTop;
 
+                if( scrollTop >= offSet ){
+                    ac.classList.add(CLASS_ON);
+                } else {
+                    ac.classList.remove(CLASS_ON);
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+
+    },
+
+    history : function(){
+        const section = document.querySelectorAll('.sec');
+        const listWrap = document.querySelector('.history-list-nav');
+        const listMenu = document.querySelectorAll('.history-list-nav a');
+
+        function handleClick(idx,event){
+            event.preventDefault();
+            const position = section[idx].offsetTop + 71;
+
+            window.scrollTo({ 
+                top:position,
+                behavior: 'smooth'
+            });
+        }
+
+        function offsetTop(){
+            const offset = listWrap.offsetTop + 71;
+            const scrollTop = window.pageYOffset - 71
+            const scrollY = window.scrollY;
+
+            if(scrollY >= offset){
+                listWrap.classList.add(CLASS_ON);
+            } else {
+                listWrap.classList.remove(CLASS_ON);
+            }
+
+            section.forEach(function(li,idx){
+                const position = section[idx].offsetTop;
+
+                if(scrollTop >= position ){
+                    listMenu.forEach(li => li.classList.remove(CLASS_ON));
+                    listMenu[idx].classList.add(CLASS_ON);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', offsetTop);
+        listMenu.forEach((li,idx) => li.addEventListener('click', () => handleClick(idx,event)));        
+    },
+
+    arcordion : function(){
+        const contents = document.querySelectorAll('.faq-list dd');
+        const btn = document.querySelectorAll('.faq-list button');
+        const list = document.querySelectorAll('.faq-list dl');
+
+        function toggleClick(idx){
+            const height = contents[idx].clientHeight + 72
+
+            if(!btn[idx].classList.contains(CLASS_ON)){
+                contents.forEach(li => li.style.visibility = "hidden");     
+                list.forEach(li => li.style.height = "");     
+                btn.forEach(li => li.classList.remove(CLASS_ON));
+                contents[idx].style.visibility = "visible";
+                list[idx].style.height = height + "px";         
+                btn[idx].classList.add(CLASS_ON);
+            } else {
+                list[idx].style.height = "";
+                btn[idx].classList.remove(CLASS_ON);
+                contents[idx].style.visibility = "hidden";
+            }
+        }
+
+        btn.forEach((button,idx) => button.addEventListener('click', () => toggleClick(idx)));
+    }
 };
 
-init();
+daewoo.gnb();

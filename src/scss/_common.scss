@@ -65,6 +65,7 @@
     }
     
     .inner{
+        position:relative;
         width:1500px;
         margin:0 auto;
         max-width:1500px;
@@ -167,8 +168,9 @@
     // util
 
     .util{
-        margin:40px 6px 0 0;
-        float:right;
+        position:absolute;
+        top:40px;
+        right:6px;
         @include clear;
 
         & ul{
@@ -238,10 +240,11 @@
     box-sizing: border-box;
     font-weight:400;
     letter-spacing:0;
-    min-width:1600px;
 
     .inner{
-        width:1600px;
+        position:relative;
+        width:1500px;
+        max-width:1480px;
         margin:0 auto;
         @include clear;
     }
@@ -324,7 +327,9 @@
     }
 
     .right{
-        float:right;
+        position:absolute;
+        top:35px;
+        right:0;
         @include clear;   
     }
 
@@ -384,7 +389,6 @@
 
 .contents-main{
     position:relative;
-    min-width:1140px;
 
     .section{
         padding-top:99px;
@@ -500,7 +504,8 @@
     text-align:right;
     padding-right:5px;
     box-sizing:border-box;
-
+    max-width:1480px;
+    
     & span{
         font-size:12px;
         color:#ddd;
@@ -531,7 +536,7 @@
     height:70px;
     border-bottom:1px solid #dadada;
     z-index:30;
-    min-width:1140px;
+    // min-width:1140px;
 
     & > ul{
         width:1140px;
@@ -542,6 +547,19 @@
         & > li{
             display:table-cell;
             position:relative;
+
+            &.on{
+
+                & button{
+                    &:after{
+                        content:"닫기";
+                    }
+                }
+
+                .sub-list{
+                    display:block;
+                }
+            }
 
             &:before{
                 display:block;
@@ -580,10 +598,6 @@
                 line-height:70px;
                 position:relative;
                 cursor:pointer;
-
-                &.on{
-                    content:"닫기";       
-                }
 
                 & span{
                     padding-right:21px;
@@ -632,10 +646,6 @@
         border-top:0;
         z-index:5;
         display:none;
-
-        &.on{
-            display:block;
-        }
         
         & li{
             border-bottom:1px solid #dcdcdc;
