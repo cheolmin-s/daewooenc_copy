@@ -2,115 +2,172 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1300">
     <meta name="format-detection" content="telephone=no">
     <title>대우건설</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
 <style>
-    body{
-        border:0;
-        margin:0;
-        line-height:1;
-    }
-    table{
-        width:100%;
-        border-top:1px solid #000;
-        border-bottom:1px solid #000;
-        border-collapse:collapse;
-    }
-    table caption{
-        font-size:30px;
-        padding:40px 0;
-    }
-    table th{
-        background:#f4f4f4;
-        color:#222;
-        padding:20px 0;
-        border-bottom:1px solid #e1e1e1;
-        border-right:1px solid #e1e1e1;
-    }
-    table th:last-child{
-        border-right:0;
-    }
-    table tbody > tr{
-        border-bottom:1px solid #e1e1e1;
-    }
-    table tbody > tr:last-child{
-        border-bottom:0;
-    }
-    table td{
-        padding:20px;
-        text-align:left;
-        line-height:1.6;
-        border-right:1px solid #e1e1e1;
-    }
-    table td:last-child{
-        border-right:0;
-    }
+body{
+    border:0;
+    margin:0;
+    line-height:1;
+    font-family:'Noto Sans KR', sans-serif;
+}
+
+h1{
+    font-size:30px;
+    padding:40px 20px;
+}
+
+.info{
+    font-weight:300;
+    line-height:2;
+    margin-bottom:40px;
+    padding:0 20px;
+}
+
+h2{
+    margin:0;
+    font-size:20px;
+}
+
+.info ul{
+    list-style:none;
+    padding:0;
+    margin-bottom:60px;
+}
+
+.info li{
+    display:inline-block;
+    margin-right:20px;
+}
+
+.info span{
+    display:block;
+    margin-top:1em;
+}
+
+table{
+    width:100%;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+    border-collapse:collapse;
+    margin-bottom:50px;
+}
+
+table caption{
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    border:0;
+    clip:rect(1px, 1px, 1px, 1px);
+}
+
+table th{
+    background:#f4f4f4;
+    color:#222;
+    padding:20px 0;
+    border-bottom:1px solid #e1e1e1;
+    border-right:1px solid #e1e1e1;
+}
+table th:last-child{
+    border-right:0;
+}
+
+table tbody > tr{
+    border-bottom:1px solid #e1e1e1;
+}
+table tbody > tr:last-child{
+    border-bottom:0;
+}
+
+table td{
+    padding:20px;
+    font-weight:300;
+    text-align:left;
+    line-height:1.6;
+    border-right:1px solid #e1e1e1;
+}
+
+table td:last-child{
+    border-right:0;
+}
 </style>
 <body>
-    
-    <table>
-        <caption>대우건설 - 퍼블리싱 포트폴리오</caption>
-        <colgroup>
-            <col style="width:12%">
-            <col style="width:12%">
-            <col style="width:12%">
-            <col style="width:20%">
-            <col style="width:20%">
-            <col style="width:24%">
-        </colgroup>
-    
-        <thead>
-            <tr>
-                <th>Depth1</th>
-                <th>Depth2</th>
-                <th>Depth3</th>
-                <th>페이지</th>
-                <th>파일</th>
-                <th>비고</th>
-            </tr>
-        </thead>
-    
-        <tbody>
-            <tr>
-                <td>대우건설</td>
-                <td></td>
-                <td></td>
-                <td>대우건설 메인</td>
-                <td><a href="html/main.html" target="_blank" title="새 창 열림">main.html</a></td>
-                <td></td>
-            </tr>
+<h1>대우건설 - 퍼블리싱 포트폴리오</h1>
+<div class="info">
+    <h2>사용기술</h2>
+    <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JAVASCRIPT</li>
+        <li>SCSS</li>
+        <li>GULP</li>
+    </ul>
+    <h2>포트폴리오 소개</h2>
+    <span>제작기간 : 1주</span>
+    <p>이 포트폴리오는 대우건설 사이트를 카피한 PC버전 포트폴리오 사이트입니다.시맨틱 태그를 사용하여 의미론적으로 다시 마크업을 했으며 제이쿼리를 쓰지않고 바닐라 자바스크립트를 사용하여 제작하였습니다.기본적으로 마크업 유효성 검사를 통해 웹 표준을 준수하였으며 접근성 또한 적절한 대체 텍스트와 모든 기능을 키보드로 사용이 가능하게 제작하였습니다.header 와 footer는 모든 페이지에 공통으로 들어가는 부분이라 따로 분리하여 include를 하였으며 각 페이지마다 css를 분리하여 좀 더 작업의 가독성을 높였습니다.</p>
+</div>
+<table>
+    <caption>대우건설 퍼블리싱 포트폴리오 표</caption>
+    <colgroup>
+        <col style="width:12%">
+        <col style="width:12%">
+        <col style="width:12%">
+        <col style="width:20%">
+        <col style="width:20%">
+        <col style="width:24%">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Depth1</th>
+            <th>Depth2</th>
+            <th>Depth3</th>
+            <th>페이지</th>
+            <th>파일</th>
+            <th>비고</th>
+        </tr>
+    </thead>
 
-            <tr>
-                <td>회사소개</td>
-                <td>기업정보</td>
-                <td>비전</td>
-                <td>비전 < 기업정보 < 회사소개</td>
-                <td><a href="html/vision.html" target="_blank" title="새 창 열림">vision.html</a></td>
-                <td></td>
-            </tr>
+    <tbody>
+        <tr>
+            <td>대우건설</td>
+            <td></td>
+            <td></td>
+            <td>대우건설 메인</td>
+            <td><a href="html/main.html" target="_blank" title="새 창 열림">main.html</a></td>
+            <td></td>
+        </tr>
 
-            <tr>
-                <td>회사소개</td>
-                <td>기업정보</td>
-                <td>주요연혁</td>
-                <td>주요연혁 < 기업정보 < 회사소개</td>
-                <td><a href="html/history.html" target="_blank" title="새 창 열림">history.html</a></td>
-                <td></td>
-            </tr>
+        <tr>
+            <td>회사소개</td>
+            <td>기업정보</td>
+            <td>비전</td>
+            <td>비전 < 기업정보 < 회사소개</td>
+            <td><a href="html/vision.html" target="_blank" title="새 창 열림">vision.html</a></td>
+            <td></td>
+        </tr>
 
-            <tr>
-                <td>고객센터</td>
-                <td>FAQ</td>
-                <td></td>
-                <td>FAQ < 고객센터</td>
-                <td><a href="html/faq.html" target="_blank" title="새 창 열림">faq.html</a></td>
-                <td></td>
-            </tr>
-    
-        </tbody>
-    </table>
+        <tr>
+            <td>회사소개</td>
+            <td>기업정보</td>
+            <td>주요연혁</td>
+            <td>주요연혁 < 기업정보 < 회사소개</td>
+            <td><a href="html/history.html" target="_blank" title="새 창 열림">history.html</a></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>고객센터</td>
+            <td>FAQ</td>
+            <td></td>
+            <td>FAQ < 고객센터</td>
+            <td><a href="html/faq.html" target="_blank" title="새 창 열림">faq.html</a></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>

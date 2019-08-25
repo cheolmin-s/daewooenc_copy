@@ -48,7 +48,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .common-header:before { display: block; content: ""; position: absolute; top: 97px; left: 0; width: 100%; height: 360px; background: #f1f1f3; }
 
-.common-header .inner { width: 1500px; margin: 0 auto; max-width: 1500px; }
+.common-header .inner { position: relative; width: 1500px; margin: 0 auto; max-width: 1500px; }
 
 .common-header .inner:after { display: block; content: ""; clear: both; }
 
@@ -82,7 +82,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .common-header .depth3 > li > a:hover, .common-header .depth3 > li > a:focus { color: #6b9ecc; }
 
-.common-header .util { margin: 40px 6px 0 0; float: right; }
+.common-header .util { position: absolute; top: 40px; right: 6px; }
 
 .common-header .util:after { display: block; content: ""; clear: both; }
 
@@ -102,9 +102,9 @@ button { padding: 0; border: 0; margin: 0; }
 
 .common-header .lang:hover, .common-header .lang:focus { color: #6b9ecc; border-color: #6b9ecc; }
 
-.common-footer { background: #3e3e3e; padding: 35px 0; height: 147px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-weight: 400; letter-spacing: 0; min-width: 1600px; }
+.common-footer { background: #3e3e3e; padding: 35px 0; height: 147px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-weight: 400; letter-spacing: 0; }
 
-.common-footer .inner { width: 1600px; margin: 0 auto; }
+.common-footer .inner { position: relative; width: 1500px; max-width: 1480px; margin: 0 auto; }
 
 .common-footer .inner:after { display: block; content: ""; clear: both; }
 
@@ -132,7 +132,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .common-footer .info .copy { display: block; font-size: 12px; color: #828282; margin-top: 6px; }
 
-.common-footer .right { float: right; }
+.common-footer .right { position: absolute; top: 35px; right: 0; }
 
 .common-footer .right:after { display: block; content: ""; clear: both; }
 
@@ -150,7 +150,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .inner { width: 1140px; margin: 0 auto; }
 
-.contents-main { position: relative; min-width: 1140px; }
+.contents-main { position: relative; }
 
 .contents-main .section { padding-top: 99px; }
 
@@ -184,7 +184,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .location-wrap { position: absolute; top: -22px; right: 0; width: 100%; }
 
-.location { width: 1500px; margin: 0 auto; text-align: right; padding-right: 5px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.location { width: 1500px; margin: 0 auto; text-align: right; padding-right: 5px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; max-width: 1480px; }
 
 .location span { font-size: 12px; color: #ddd; font-weight: 400; }
 
@@ -192,11 +192,15 @@ button { padding: 0; border: 0; margin: 0; }
 
 .location span:first-child:before { display: none; }
 
-.lnb { position: -webkit-sticky; position: sticky; top: 0; left: 0; background: #fff; height: 70px; border-bottom: 1px solid #dadada; z-index: 30; min-width: 1140px; }
+.lnb { position: -webkit-sticky; position: sticky; top: 0; left: 0; background: #fff; height: 70px; border-bottom: 1px solid #dadada; z-index: 30; }
 
 .lnb > ul { width: 1140px; margin: 0 auto; display: table; table-layout: fixed; }
 
 .lnb > ul > li { display: table-cell; position: relative; }
+
+.lnb > ul > li.on button:after { content: "닫기"; }
+
+.lnb > ul > li.on .sub-list { display: block; }
 
 .lnb > ul > li:before { display: block; content: ""; position: absolute; top: 50%; left: -1px; width: 1px; height: 20px; margin-top: -10px; background: #dcdcdc; }
 
@@ -205,8 +209,6 @@ button { padding: 0; border: 0; margin: 0; }
 .lnb > ul > li:last-child:after { display: block; content: ""; position: absolute; top: 50%; right: 0; width: 1px; height: 20px; margin-top: -10px; background: #dcdcdc; }
 
 .lnb > ul > li button { display: block; width: 100%; font-size: 17px; font-weight: 400; color: #000; font-family: 'Noto Sans KR',sans-serif; background: 0; line-height: 70px; position: relative; cursor: pointer; }
-
-.lnb > ul > li button.on { content: "닫기"; }
 
 .lnb > ul > li button span { padding-right: 21px; letter-spacing: -0.5px; position: relative; }
 
@@ -217,8 +219,6 @@ button { padding: 0; border: 0; margin: 0; }
 .lnb > ul > li > a { display: block; font-size: 17px; font-weight: 400; color: #000; line-height: 70px; text-align: center; }
 
 .lnb .sub-list { position: absolute; top: 71px; left: 0; width: 100%; background: #fff; border: 1px solid #dcdcdc; border-top: 0; z-index: 5; display: none; }
-
-.lnb .sub-list.on { display: block; }
 
 .lnb .sub-list li { border-bottom: 1px solid #dcdcdc; }
 
@@ -232,7 +232,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .scroll-active.on { opacity: 1; -webkit-transform: translateY(0); -moz-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); transform: translateY(0); }
 
-.section-main { position: relative; min-width: 1600px; }
+.section-main { position: relative; }
 
 .section-main .video { position: relative; height: 100vh; }
 
@@ -550,6 +550,8 @@ button { padding: 0; border: 0; margin: 0; }
 
 .section-faq .faq-list { width: 1140px; margin: 0 auto; border-top: 2px solid #335173; }
 
+.section-faq .faq-list dl { height: 71px; overflow: hidden; -webkit-transition: all .5s ease-out; -o-transition: all .5s ease-out; -moz-transition: all .5s ease-out; transition: all .5s ease-out; }
+
 .section-faq .faq-list button { font-size: 18px; color: #333; font-weight: 400; font-family: "Noto Sans KR",sans-serif; background: 0; width: 100%; height: 71px; line-height: 70px; border-bottom: 1px solid #eaeaea; text-align: left; padding: 0 20px; letter-spacing: -0.5px; position: relative; cursor: pointer; }
 
 .section-faq .faq-list button.on:after { content: "닫기"; background-position: -18px 0; }
@@ -558,7 +560,7 @@ button { padding: 0; border: 0; margin: 0; }
 
 .section-faq .faq-list button:after { display: block; content: "열기"; position: absolute; top: 30px; right: 20px; width: 18px; height: 0; max-height: 11px; padding-top: 11px; overflow: hidden; background: url("../images/icon2/customer-faq-arrow.png") no-repeat; }
 
-.section-faq .faq-list dd { padding: 30px 40px 30px 70px; background: #f3f3f3; border-bottom: 1px solid #eaeaea; display: none; }
+.section-faq .faq-list dd { padding: 30px 40px 30px 70px; background: #f3f3f3; border-bottom: 1px solid #eaeaea; -webkit-transition: all .5s ease-out; -o-transition: all .5s ease-out; -moz-transition: all .5s ease-out; transition: all .5s ease-out; visibility: hidden; }
 
 .section-faq .text-wrap { padding-left: 45px; position: relative; }
 
